@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>If</title>
+	<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-lg-offset-4">
+				<div id="app">
+					<ul>
+						<li v-for="user in users" class="panel panel-default">
+							<img v-bind:src="user.photo">
+							<h3>{{user.name}}</h3>
+							<p>{{user.age}} years old</p>
+							<button v-if="user.editable" class="btn btn-default">edit</button>
+							<button v-if="user.deletable" class="btn btn-default">delete</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="../vendor/bootstrap/bootstrap.min.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
