@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<li v-for="user in users">
+				<img v-bind:src="user.photo">
+				<h1>{{user.name}}</h1>
+				<p>{{user.age}} years old</p>				
+			</li>
+		</ul>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="app.js"></script>
+</body>
+</html>

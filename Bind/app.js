@@ -1,5 +1,5 @@
 var app = new Vue({
-	el: '#user',
+	el: '#app',
 	data: {
 		name: 'Juan-Francisco',
 		age: 27,
