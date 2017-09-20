@@ -13,14 +13,14 @@ var app = new Vue({
 		{
 			name: 'Dog'
 			,age: 0
-			,photo: 'http://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg'
+			,photo: 'http://zoomiedogs.com/wp-content/uploads/dog-icon1.png'
 			,editable: true
 			,deletable: true
 		}
 		]
 		
 	},
-	methods:{
+	methods: {
 		edit: function(){
 			console.log('editing...');
 		},
@@ -28,7 +28,7 @@ var app = new Vue({
 			console.log('removing...');
 		},
 		getJSON: function(user){
-			alert(JSON.stringify(user));
+			console.log(JSON.stringify(user));
 		}
 	}
 });
