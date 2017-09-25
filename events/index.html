@@ -15,11 +15,23 @@
 					<ul>
 						<li v-for="user in users" class="panel panel-default">
 							<img v-bind:src="user.photo">
-							<h3>{{user.name}}</h3>
-							<p>{{user.age}} years old</p>
+							<h3>My name is {{user.name}}</h3>
+							<p>I'm {{user.age}} years old</p>
 							<button v-on:click="getJSON(user)" class="btn btn-success">get JSON</button>
-							<button v-on:click="edit" v-if="user.editable" class="btn btn-default">edit</button>
+							<button v-on:click="edit(user)" v-if="user.editable" class="btn btn-default">edit</button>
 							<button v-on:click="remove" v-if="user.deletable" class="btn btn-default">delete</button>
+							<div v-if="user.editing">
+								<h4>Editing</h4>
+								<p>
+									<input type="text" class="form-control" v-model="user.name">
+								</p>
+								<p>
+									<input type="text" class="form-control" v-model="user.age">
+								</p>
+								<p>
+									<button v-on:click="edit(user)" class="btn btn-default">Done</button>
+								</p>
+							</div>
 						</li>
 					</ul>
 				</div>
