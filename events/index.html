@@ -16,10 +16,16 @@
 						<li v-for="user in users" class="panel panel-default">
 							<img v-bind:src="user.photo">
 							<h3>My name is {{user.name}}</h3>
-							<p>I'm {{user.age}} years old</p>
+							<p>My position is {{user.position}}, and I'm {{user.age}} years old</p>
+							<p>I master these technologies:</p>
+							<p>
+								<ol>
+									<technology-item v-for="item in user.technologies" v-bind:technology="item"></technology-item>
+								</ol>
+							</p>
 							<button v-on:click="getJSON(user)" class="btn btn-success">get JSON</button>
-							<button v-on:click="edit(user)" v-if="user.editable" class="btn btn-default">edit</button>
-							<button v-on:click="remove" v-if="user.deletable" class="btn btn-default">delete</button>
+							<button v-on:click="edit(user)" v-if="user.editable" class="btn btn-default">{{editButtonText}}</button>
+							<button v-on:click="remove(user.id)" v-if="user.deletable" class="btn btn-default">delete</button>
 							<div v-if="user.editing">
 								<h4>Editing</h4>
 								<p>
@@ -27,6 +33,9 @@
 								</p>
 								<p>
 									<input type="text" class="form-control" v-model="user.age">
+								</p>
+								<p>
+									<input type="text" class="form-control" v-model="user.position">
 								</p>
 								<p>
 									<button v-on:click="edit(user)" class="btn btn-default">Done</button>

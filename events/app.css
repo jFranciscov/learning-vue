@@ -9,6 +9,10 @@ ul{
 	margin-top: 10px;
 }
 
+ol{
+	text-align: left;
+}
+
 /* Bootstrap */
 
 .panel{
