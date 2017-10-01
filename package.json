@@ -1,0 +1,10 @@
+{
+	"name" : "learning",
+	"description" : "learning many things: node, express, vue, ...",
+	"version" : "0.0.0",
+	"private" : "true",
+	"dependencies": {
+		"express" : "4.x",
+		"body-parser" : "1.18.0"
+	}
+}
