@@ -17,6 +17,12 @@ var users = new Vue({
 	},
 	methods: {
 		edit: function(user){
+			if(user.editing){
+				axios.put('http://localhost:3000/api/user/' + user.id, user).
+				then(function(){
+					alert('successfully edited!');
+				});
+			}
 			user.editing = !user.editing;
 		},
 		remove: function(id){
