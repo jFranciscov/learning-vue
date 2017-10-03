@@ -13,6 +13,9 @@ var users = new Vue({
 		axios.get('http://localhost:3000/api/users').
 		then(function(response){
 			self.users = response.data;
+		})
+		.catch(function(error){
+			console.log(error);
 		});
 	},
 	methods: {
@@ -20,7 +23,10 @@ var users = new Vue({
 			if(user.editing){
 				axios.put('http://localhost:3000/api/user/' + user.id, user).
 				then(function(){
-					alert('successfully edited!');
+					console.log('successfully edited!');
+				})
+				.catch(function(error){
+					console.log(error);
 				});
 			}
 			user.editing = !user.editing;

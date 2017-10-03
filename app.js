@@ -19,8 +19,10 @@ app.put('/api/user/:id', function(req, res){
 	// 	return item.id = req.params.id;
 	// });
 	// user = req.body;
-	if(true)
-		res.end();
+	// res.status(500).send('Ha ocurrido un error');
+
+	//edit user
+	res.end();
 });
 
 app.listen(app.get('port'), function () {
